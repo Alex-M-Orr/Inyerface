@@ -17,7 +17,6 @@ export const ProfileComp: React.FC<IProps> = (props:IProps) => {
     const [ toggleName, setNameToggle ] = useState(false);
     const [ toggleRotate, setPanelRotate ] = useState("rotate(90deg)");
     const [ showInfo, setShowInfo ] = useState(false);
-    const [ letterPos, setLetterPos ] = useState("translate(0px,0px)");
 
     const tempName = "Dilly Gobbington";
     const tempBio = "I\'m a pretty cool guy to be frank. I don\'t like to gloat "+
@@ -36,7 +35,7 @@ export const ProfileComp: React.FC<IProps> = (props:IProps) => {
 
         if(showInfo)
         {
-            setTimeout(()=>setLetterPos(`translate(${Math.random()*30}px,${Math.random()*30}px)`),Math.random()*10);
+            
         }
     });
 
