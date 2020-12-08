@@ -1,24 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Register } from './Components/Register/Register';
+import { ProfileComp } from './Components/Profile/Profile';
+import { Timer } from './Components/Timer/Timer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Register></Register>
+      <ProfileComp/>
+      <Timer seconds={Math.round(Math.random()*20)} fontSize={100} />
     </div>
   );
 }
