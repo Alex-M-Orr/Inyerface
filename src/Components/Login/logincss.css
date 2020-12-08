@@ -1,0 +1,50 @@
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    background-color: #332E2E;
+    margin: auto;
+    border: 5px solid #BDC7A5;
+    border-radius: 15px;
+  }
+
+
+  #username {
+    margin-top: 10px;
+  }
+
+  .btndiv{
+    padding-top: 10px; 
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+
+  #btn1 {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  
+  .btnanim {
+    background-color: #BDC7A5;
+    box-shadow: 3px 5px 5px #888888;
+    border-radius: 2px;
+    transition: all 1s ease;
+    transform: scale(1);
+  }
+  
+  .btnanim:hover {
+    background-color: #000;
+    transform: scale(2) perspective(1px) rotate(20deg);
+  }
+
+
+  body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
