@@ -1,13 +1,47 @@
 @import "color.scss";
 
 .arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
+  border: solid $color-four;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
 }
 
-.down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+#registerExpandButton {
+  background-color: $color-one;
+  width: 50%;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.registerContainer {
+  width: 50%;
+  margin: auto;
+}
+
+.collapsing {
+    position: absolute !important;
+    bottom: 38px !important;
+}
+.registerWrapper {
+  background-color: $color-four;
+  color: $color-one;
+  width: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 38px;
+  margin: auto;
+  transition: height 4s ease-in-out;
+
+}
+.registerWrapper input {
+}
+#registerSubmit {
+    width: 100px !important;
+    transition: 0.15s linear;
+
 }
