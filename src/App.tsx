@@ -10,9 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      <Register></Register>
+      {/* <Register></Register> */}
       <ProfileComp/>
-      <Timer seconds={Math.round(Math.random()*20)} fontSize={100} />
     </div>
   );
 }
