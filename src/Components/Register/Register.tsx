@@ -7,7 +7,7 @@ import {
   Label,
   InputGroup,
   Card,
-} from "reactstrap";
+} from "reactstrap"; 
 import "./Register.css";
 
 export const Register: React.FC<any> = (props: any) => {
