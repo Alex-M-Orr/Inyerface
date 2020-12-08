@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-//import "../../SCSS/timer.scss";
+import "../../SCSS/timer.scss";
 
 interface IProps {
     seconds: number,

@@ -8,7 +8,7 @@ import {
   InputGroup,
   Card,
 } from "reactstrap"; 
-import "./Register.css";
+import "../../SCSS/register.scss";
 
 export const Register: React.FC<any> = (props: any) => {
   const [formOpen, setFormOpen] = useState(false);

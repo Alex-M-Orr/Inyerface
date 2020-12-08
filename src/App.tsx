@@ -5,6 +5,7 @@ import { Register } from './Components/Register/Register';
 import { ProfileComp } from './Components/Profile/Profile';
 import { Timer } from './Components/Timer/Timer';
 
+
 function App() {
   return (
     <div className="App">
