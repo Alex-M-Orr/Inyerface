@@ -44,7 +44,7 @@ export const ProfileComp: React.FC<IProps> = (props:IProps) => {
             <div className="container">
             <div className="row justify-content-center">
                 {/* Profile Image */}
-                <div className="col-3">
+                <div className="col-2">
                     <div className="prof-img-container" 
                     style={{transform: toggleRotate}}
                     onMouseEnter={()=>setPanelRotate("rotate(0deg)")}
@@ -57,10 +57,13 @@ export const ProfileComp: React.FC<IProps> = (props:IProps) => {
                         <div className="black-box"
                         onMouseEnter={()=>setNameToggle(true)} />
                         }
+                        <div className="row justify-content-center">
                         <img style={{maxWidth: maxImgWidth}} className="prof-img"
                         src="https://cdn.shopify.com/s/files/1/1635/2935/products/38336_large.jpg?v=1600837700" 
                         alt="I'm not sure what this is" 
                         onClick={()=>setMaxImgWidth(maxImgWidth-10)}/>
+                        </div>
+                        
                     </div>
                 </div>
                 {/* Profile Info */}

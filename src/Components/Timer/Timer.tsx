@@ -34,7 +34,6 @@ export const Timer: React.FC<IProps> = (props:IProps) => {
     const reachedCountdown = () => {
         if(props.triggeredFunction !== undefined)
         {
-            setSeconds(0);
             props.triggeredFunction();
         }
         else

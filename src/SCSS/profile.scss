@@ -7,6 +7,7 @@
 }
 
 .prof-img {
+    margin: auto;
     border-radius: 50%;
     box-shadow: 3px 3px $color-one;
     transition: 1s;
@@ -25,6 +26,10 @@
     padding: 15px 30px 30px 30px;
     box-shadow: 4px 4px $color-one;
     overflow: hidden;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
 }
 
 .prof-info-container {
@@ -36,10 +41,15 @@
     padding: 15px 30px 30px 30px;
     box-shadow: 4px 4px $color-one;
     overflow: hidden;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
 }
 
 .prof-name {
     margin:auto;
+    text-align: center;
     margin-bottom: 10px;
 }
 
@@ -47,7 +57,7 @@
     margin: auto;
     margin-bottom: 10px;
     background-color: $color-one;
-    width: 120px;
+    width: 90px;
     height: 24px;
 }
 
@@ -80,6 +90,8 @@
 }
 
 .prof-hr {
-    width: 70%;
+    text-align: left;
+    margin-left: 0px;
+    width: 20%;
     color: $color-one;
 }
