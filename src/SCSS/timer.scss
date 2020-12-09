@@ -1,0 +1,25 @@
+@import "color.scss";
+
+#time {
+    text-align: center;
+    animation-name: growAndShrink;
+    -moz-animation-name: growAndShrink;
+    -webkit-animation-name: growAndShrink;
+    -o-animation-name: growAndShrink;
+    animation-duration: 0.3s;
+    -moz-animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    -o-animation-duration: 0.3s;
+    animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+}
+
+@keyframes growAndShrink {
+    0% {-webkit-transform: scale(1); color: $color-one}
+
+    50% {-webkit-transform: scale(1.5); color: $color-two}
+
+    100% {-webkit-transform: scale(1); color: $color-one}
+}
