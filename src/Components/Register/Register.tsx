@@ -13,10 +13,18 @@ import { Timer } from "../Timer/Timer";
 
 export const Register: React.FC<any> = (props: any) => {
   const [formOpen, setFormOpen] = useState(false);
+<<<<<<< HEAD
+=======
+  const [ toggleTimer, setToggleTimer ] = useState(false);
+>>>>>>> adb66adff6bbb153e3f5eb0a4436ddc660a8c3e3
   const [arrowDirection, setArrowDirection] = useState(45);
   const [subPos,setSubPos] = useState(0);
 
   const toggleForm = () => {
+<<<<<<< HEAD
+=======
+    setToggleTimer(!toggleTimer);
+>>>>>>> adb66adff6bbb153e3f5eb0a4436ddc660a8c3e3
     setFormOpen(!formOpen);
     changeArrowDirection();
   }
@@ -110,7 +118,15 @@ export const Register: React.FC<any> = (props: any) => {
           </InputGroup>
           <input type="submit" style={{transform: `translateX(${subPos}px)`}} value="Submit" id="registerSubmit" onMouseEnter={ moveSubmit }></input>
         </Form>
+<<<<<<< HEAD
         <Timer seconds={Math.round(Math.random()*20)} fontSize={100} />
+=======
+        { toggleTimer ? 
+        <Timer seconds={Math.round(Math.random()*15)} fontSize={100} triggeredFunction={toggleForm}/>
+        :
+        <span />
+        }
+>>>>>>> adb66adff6bbb153e3f5eb0a4436ddc660a8c3e3
       </Collapse>
       <Button id="registerExpandButton" onClick={toggleForm}>
         <span className="arrow" style={{transform: `rotate(${arrowDirection}deg)`}}></span>
