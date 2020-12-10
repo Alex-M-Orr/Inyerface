@@ -1,0 +1,54 @@
+@import "color.scss";
+
+.text-area {
+    border: 2px solid $color-one;
+    z-index: 4;
+    border-radius: 10px;
+    color: $color-one;
+    padding: 5px;
+    background-image: linear-gradient(180deg, $color-four, white, white, white);
+}
+
+#text-edit-btn {
+    position: absolute;
+    padding: 10px;
+    color: white;
+    background-color: $color-two;
+    border: 2px solid $color-one;
+    border-radius: 10px;
+    cursor: default;
+}
+
+#inv-edit-btn {
+    position: absolute;
+    padding: 10px;
+    color: #00000000;
+    background-color: #00000000;
+    border: 2px solid #00000000;
+    border-radius: 10px;
+    cursor: default;
+}
+
+#inv-edit-btn:hover ~ #text-edit-btn {
+    color: #00000000;
+    background-color: #00000000;
+    border: 2px solid #00000000;
+    cursor: default;
+}
+
+.submit-btn {
+    position: absolute;
+    padding: 5px;
+    font-size: 15;
+    color: white;
+    background-color: $color-two;
+    border: 2px solid $color-one;
+    border-radius: 10px;
+}
+
+.submit-btn:hover {
+    color: #00000000;
+    background-color: #00000000;
+    border: 2px solid #00000000;
+    cursor: default;
+}
