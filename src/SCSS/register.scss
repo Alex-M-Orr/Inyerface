@@ -1,5 +1,7 @@
 @import "color.scss";
+.body {
 
+}
 .arrow {
   border: solid $color-four;
   border-width: 0 3px 3px 0;
@@ -30,13 +32,17 @@
   right: 0;
   bottom: 38px;
   margin: auto;
-  transition: height 4s ease-in-out;
-
-}
-.registerWrapper input {
+  border: solid $color-one;
+  border-width: 3px 3px 3px 3px;
+  border-radius: 15px 15px 0 0;
 }
 #registerSubmit {
     width: 100px !important;
-    transition: 0.15s linear;
-
+    transition: 0.15s linear 0.25s;
+    background-color: $color-two;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin:auto;
+    border: none;
 }

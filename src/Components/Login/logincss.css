@@ -6,8 +6,7 @@
     margin: auto;
     border: 5px solid #BDC7A5;
     border-radius: 15px;
-  }
-
+}
 
   #username {
     margin-top: 10px;
@@ -33,16 +32,44 @@
   .btnanim {
     background-color: #BDC7A5;
     box-shadow: 3px 5px 5px #888888;
+    border-color: #BDC7A5;
     border-radius: 2px;
     transition: all 1s ease;
     transform: scale(1);
   }
   
   .btnanim:hover {
-    background-color: #000;
+    background-color: #6B8B83;
+    border-color: #6B8B83;
     transform: scale(2) perspective(1px) rotate(20deg);
   }
 
+  .btnanim:active{
+    background-color: #6B8B83;
+    border-color: #6B8B83;
+    outline: none !important;
+    outline: none;
+    box-shadow: 3px 5px 5px #888888 !important;
+    -webkit-appearance: none;
+  }
+
+  .btnanim:focus{
+    background-color: #6B8B83;
+    border-color: #6B8B83;
+    outline: none;
+    box-shadow: 3px 5px 5px #888888 !important;
+    -webkit-appearance: none;
+  }
+
+  .btnanim:active:focus {
+    background-color: #6B8B83 !important;
+    border-color: #6B8B83 !important;
+    outline: none;
+    box-shadow: 3px 5px 5px #888888 !important;
+    -webkit-appearance: none;
+  }
+
+  
 
   body {
     padding-top: 40px;
