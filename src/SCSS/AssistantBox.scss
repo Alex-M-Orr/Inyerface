@@ -1,0 +1,37 @@
+@import "color.scss";
+
+.arrow {
+    border: solid $color-four;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+.userMessages {
+    background-color: $color-five;
+    text-align: left;
+}
+
+.botMessages {
+    background-color: $color-three;
+    text-align: right;
+}
+
+.assistantButton {
+    background-color: $color-one;
+    width: 15%;
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+}
+
+.assistantWrapper {
+    background-color: $color-four;
+    width: 15%;
+    position: absolute;
+    right: 25px;
+    bottom: 38px;
+    border: solid $color-one;
+    border-width: 3px 3px 3px 3px;
+    border-radius: 15px 15px 0 0;
+}

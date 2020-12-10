@@ -41,7 +41,7 @@
   .btnanim:hover {
     background-color: #6B8B83;
     border-color: #6B8B83;
-    transform: scale(2) perspective(1px) rotate(20deg);
+    transform: scale(2) perspective(1px) rotate(380deg);
   }
 
   .btnanim:active{
@@ -68,10 +68,6 @@
     box-shadow: 3px 5px 5px #888888 !important;
     -webkit-appearance: none;
   }
-
-  
-
-  body {
+  .Login {
     padding-top: 40px;
-    padding-bottom: 40px;
   }

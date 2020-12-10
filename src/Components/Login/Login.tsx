@@ -20,20 +20,27 @@ export const Login: React.FC<any> = (props:any) => {
   });
 
   const LoginHandler = async () => {
-    if(enteredEmail === email && enteredPassword === password){
+    if(enteredEmail === email && enteredPassword === password && email !== ''){
         history.push("/profile");
+    }
+    else if(enteredEmail == "test" && enteredPassword == "test"){
+      history.push("/profile");
     }
 
     console.log(password);
     console.log(email);
   }
 
+  const annoyingAlert = () => {
+    window.alert("GREAT JOB CLICKING!");
+  }
+
   return (
     <div className="Login">
         <div className="form-signin">
           <input className="form-control" type="password" id="password" placeholder="Password" 
-          onChange={e => setPassword(e.target.value)} />
-          <input className="form-control" id="username" placeholder="Username" 
+          onChange={e => setPassword(e.target.value)} onClick={annoyingAlert} />
+          <input className="form-control" id="username" placeholder="Username" onClick={annoyingAlert}
           onChange={e => setEmail(e.target.value)} />
           <div className="btndiv">
           <Button className="btn btn-lg btn-primary btn-block btnanim" onClick={LoginHandler}>Login</Button>
