@@ -18,6 +18,7 @@ let counter =0;
 let mappedNums:any = [];
 
 export const Register: React.FC<any> = (props: any) => {
+  
   const [formOpen, setFormOpen] = useState(false);
   const [ toggleTimer, setToggleTimer ] = useState(false);
   const [arrowDirection, setArrowDirection] = useState(180);
@@ -33,7 +34,7 @@ export const Register: React.FC<any> = (props: any) => {
     
     let email = event.currentTarget["emailKey"].value + event.currentTarget["atSymbol"].value + event.currentTarget["emailAddress"].value;
     let password = event.currentTarget["password"].value;
-    let name = event.currentTarget["firstName"].value + " " + event.currentTarget["lastName"];
+    let name = event.currentTarget["firstName"].value + " " + event.currentTarget["lastName"].value;
     let weight = event.currentTarget["weight"].value; 
     let phone = event.currentTarget["digit0"].value + event.currentTarget["digit1"].value + event.currentTarget["digit2"].value + event.currentTarget["digit3"].value +
     event.currentTarget["digit4"].value + event.currentTarget["digit5"].value + event.currentTarget["digit6"].value + event.currentTarget["digit7"].value + event.currentTarget["digit8"].value +
@@ -46,6 +47,7 @@ export const Register: React.FC<any> = (props: any) => {
       weight: weight,
       phone: phone,
     }
+    console.log(user);
   
     dispatch(setUserStore(user));
     console.log("PAST DISPATCH");  

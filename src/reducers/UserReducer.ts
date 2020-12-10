@@ -17,7 +17,7 @@ export const initialUserState = {
 export const UserReducer = (state: IUserState = initialUserState, action:any) => {
     switch(action.type){
         case 'REGISTER':
-            return state;
+            return action.payload;
         default:
             return state;
     }
