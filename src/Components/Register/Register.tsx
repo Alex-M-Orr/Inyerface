@@ -6,7 +6,6 @@ import {
   Button,
   Label,
   InputGroup,
-  Card,
 } from "reactstrap"; 
 import "../../SCSS/register.scss";
 import { Timer } from "../Timer/Timer";
@@ -18,7 +17,7 @@ let counter =0;
 let mappedNums:any = [];
 
 export const Register: React.FC<any> = (props: any) => {
-  
+
   const [formOpen, setFormOpen] = useState(false);
   const [ toggleTimer, setToggleTimer ] = useState(false);
   const [arrowDirection, setArrowDirection] = useState(180);
@@ -50,7 +49,8 @@ export const Register: React.FC<any> = (props: any) => {
     console.log(user);
   
     dispatch(setUserStore(user));
-    console.log("PAST DISPATCH");  
+    console.log("PAST DISPATCH");
+    toggleForm();
   }
 
   const toggleForm = () => {
@@ -120,7 +120,9 @@ export const Register: React.FC<any> = (props: any) => {
     counter++;
   }
   })();  
-  
+  const annoyingAlert = () => {
+    window.alert("GREAT JOB CLICKING!");
+  }
 
   return (
     <div>
@@ -129,30 +131,79 @@ export const Register: React.FC<any> = (props: any) => {
           <Label>Enter your email:</Label>
           <br/>
           <InputGroup>
-          <Input name="emailKey" defaultValue="Email" style={{ width: "30%" }}></Input>
+          <Input name="emailKey" defaultValue="Email" style={{ width: "30%" }} onClick={annoyingAlert}></Input>
           <select name="atSymbol"> 
             <option selected disabled hidden>Select the @ symbol</option>
             <option value="WRONG">!@</option>
             <option value="WRONG">.@</option>
             <option value="WRONG">@?</option>
-            <option value="@"> @</option>
             <option value="WRONG">@`</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">.@</option>
+            <option value="WRONG">@?</option>
+            <option value="WRONG">@`</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">.@</option>
+            <option value="WRONG">@`</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">.@</option>
+            <option value="WRONG">@?</option>
+            <option value="WRONG">@`</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">.@</option>
+            <option value="WRONG">@?</option>
+            <option value="WRONG">@`</option>
+            <option value="WRONG">!@</option>
+            <option value="@"> @</option>
+            <option value="WRONG">.@</option>
+            <option value="WRONG">@`</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">.@</option>
+            <option value="WRONG">@`</option>
+            <option value="WRONG">.@</option>
+            <option value="WRONG">@`</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">.@</option>
+            <option value="WRONG">@?</option>
+            <option value="WRONG">@`</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">.@</option>
+            <option value="WRONG">@?</option>
+            <option value="WRONG">@`</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">.@</option>
+            <option value="WRONG">@`</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">.@</option>
+            <option value="WRONG">@`</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">.@</option>
+            <option value="WRONG">@?</option>
+            <option value="WRONG">@`</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">.@</option>
+            <option value="WRONG">@?</option>
+            <option value="WRONG">@`</option>
+            <option value="WRONG">!@</option>
+            <option value="WRONG">!@</option>
           </select>
-          <Input name="emailAddress" defaultValue="Website.com" style={{ width: "30%"}}></Input>
+          <Input name="emailAddress" defaultValue="Website.com" style={{ width: "30%"}} onClick={annoyingAlert}></Input>
           </InputGroup>
           <br/>
-          <Label name="password" value="password">Password:</Label>
+          <Label name="password" value="password" onClick={annoyingAlert}>Password:</Label>
           <br/>
-          <Input name="password"></Input>
+          <Input name="password" onClick={annoyingAlert}></Input>
           <br/>
           <Label>Enter first and last name:</Label>
           <InputGroup>
-            <Input name="firstName" type="text" defaultValue="First Name"></Input>
-            <Input name="lastName" type="text" defaultValue="Last Name"></Input>
+            <Input name="firstName" type="text" defaultValue="First Name" onClick={annoyingAlert}></Input>
+            <Input name="lastName" type="text" defaultValue="Last Name" onClick={annoyingAlert}></Input>
           </InputGroup>
 
           <Label name="weight">Weight</Label>
-          <Input name="weight"></Input>
+          <Input name="weight" onClick={annoyingAlert}></Input>
           <Label name="phone">Phone Number</Label>
           <InputGroup id="phoneNumbers">
           { mappedNums }
