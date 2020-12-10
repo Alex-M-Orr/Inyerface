@@ -30,56 +30,6 @@ export const ProfileComp: React.FC<IProps> = (props:IProps) => {
     "cool to finish that story. I know you\'ll all agree if and when you are graced " +
     "with my presence.";
 
-    let array: string[] = ["begin", "adasd", "end"];
-
-    console.log("default array: " + array + array.length);
-    console.log(array.pop());
-    console.log(array.unshift("new beg"));
-    console.log("array with new beginning: " + array + array.length);
-    console.log(array.shift());
-    console.log(array.push("new end"));
-    console.log("array with new ending: " + array + array.length);
-    console.log(array.pop());
-
-    //filter practice
-    const objArray: any = [{name: "ween", price: 69}, {name: "bean", price:420}];
-    console.log(objArray.filter((object:any) => {
-        return object.price == 69;
-    }));
-    
-    //find practice
-    console.log(objArray.find((object:any) => {
-        return object.name == "ween";
-    }));
-
-    //foreach practice
-    objArray.foreach((object:any) => {
-        console.log(object.name);
-    });
-
-    //some practice
-    let hasExpensiveItems = objArray.some((object:any) => {
-        return object.price > 419;
-    });
-    console.log("should be true: " + hasExpensiveItems);
-
-    //every practice
-    hasExpensiveItems = objArray.every((object:any) => {
-        return object.price > 419;
-    });
-    console.log("should be false since not EVERY single item is expensive: " + hasExpensiveItems);
-
-    //reduce practice (first parameter accumulates data from each element)
-    const totalPrice = objArray.reduce((currentTotal:any, object:any) => {
-        return object.price + currentTotal;
-    }, 0); //<- this zero is the initial value of currentTotal
-    console.log(totalPrice);
-
-    //includes practice
-    const numArray = [1,2,420];
-    const has420 = numArray.includes(420);
-    console.log("should be true: " + has420);
-
     useEffect(()=>{
         if(maxImgWidth < 10)
         {
