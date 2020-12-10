@@ -10,9 +10,7 @@ import {
 } from "reactstrap"; 
 import "../../SCSS/register.scss";
 import { Timer } from "../Timer/Timer";
-import { IUserState } from "../../reducers/UserReducer"
 import { useDispatch } from 'react-redux';
-import {setUserState} from '../../actions/UserAction';
 
 let counter =0;
 let mappedNums:any = [];
@@ -24,7 +22,7 @@ export const Register: React.FC<any> = (props: any) => {
   const [buttonRadius, setButtonRadius] = useState(15);
   const [buttonTransition, setButtonTransition] = useState(.7);
   const [subPos,setSubPos] = useState(0);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
 
   const registerFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -39,15 +37,15 @@ export const Register: React.FC<any> = (props: any) => {
     event.currentTarget["digit4"].value + event.currentTarget["digit5"].value + event.currentTarget["digit6"].value + event.currentTarget["digit7"].value + event.currentTarget["digit8"].value +
     event.currentTarget["digit9"].value;
   
-    const user: IUserState = {
-      email: email,
-      password: password,
-      name: name,
-      weight: weight,
-      phone: phone,
-    }
+    // const user: IUserState = {
+    //   email: email,
+    //   password: password,
+    //   name: name,
+    //   weight: weight,
+    //   phone: phone,
+    // }
   
-    dispatch(setUserState(user));
+    // dispatch(setUserState(user));
     console.log("PAST DISPATCH");  
   }
 

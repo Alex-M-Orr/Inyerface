@@ -6,20 +6,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { ProfilePage } from "./Views/ProfilePage/ProfilePage";
 import { LoginPage } from "./Views/LoginPage/LoginPage";
-import { store } from "./Store";
 import { Provider } from "react-redux";
+import { createStore } from 'redux';
+import { rootReducers } from './reducers/Index'
+
+const store = createStore(rootReducers, +  (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__());
 
 function App() {
   return (
     <div className="App">
-      <Provider store={store}>
         <Router>
           <Switch>
             <Route path="/login" component={LoginPage}></Route>
             <Route path="/profile" component={ProfilePage}></Route>
           </Switch>
         </Router>
-      </Provider>
     </div>
   );
 }
