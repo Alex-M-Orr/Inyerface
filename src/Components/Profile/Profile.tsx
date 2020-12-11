@@ -43,11 +43,11 @@ const ProfileComp: React.FC<IProps> = (props:IProps) => {
             }
             else if( randNum == 1 )
             {
-                return (<p>another puzzle will go here</p>);
+                return ( <DragonPuzzle triggeredFunction={()=>setIsPuzzleSolved(true)} />);
             }
             else if( randNum == 2 )
             {
-                return (<p>yet another puzzle will go here</p>);
+                return ( <DragonPuzzle triggeredFunction={()=>setIsPuzzleSolved(true)} />);
             }
     }
 
@@ -117,7 +117,7 @@ const ProfileComp: React.FC<IProps> = (props:IProps) => {
 
                                     <h3 className="prof-text-header">Phone Number:</h3>
                                     <hr className="prof-hr"/>
-                                    <EditButton buttonName="Phone #" text={formattedPhoneNumber(props.phoneNumber)}/>
+                                    <EditButton buttonName="Phone Number" text={formattedPhoneNumber(props.phoneNumber)}/>
                                 </>
                             
                                 :

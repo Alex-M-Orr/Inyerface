@@ -2,7 +2,7 @@ import React, { SyntheticEvent, useEffect, useState } from "react";
 import $ from "jquery";
 import "../../SCSS/edit-btn.scss";
 import { useDispatch } from "react-redux";
-import { setUserStore } from "../../actions/UserAction";
+import { REGISTER, setUserStore, SET_NAME, SET_PHONE, SET_WEIGHT } from "../../actions/UserAction";
 import { IUserState } from "../../reducers/UserReducer";
 
 interface IProps {
@@ -33,12 +33,34 @@ export const EditButton: React.FC<IProps> = (props:IProps) => {
                 phone: -69
             }
 
-            dispatch(setUserStore(user));
+            dispatch(setUserStore(user, SET_NAME));
+        }
+        else if(props.buttonName.toLowerCase() == "weight")
+        {
+            const user:IUserState = {
+                email: "bye bye email",
+                password: "bye bye password",
+                name: "bye bye name",
+                weight: newText,
+                phone: -69
+            }
+
+            dispatch(setUserStore(user, SET_WEIGHT));
+        }
+        else if(props.buttonName.toLowerCase() == "phone number")
+        {
+            const user:IUserState = {
+                email: "bye bye email",
+                password: "bye bye password",
+                name: "bye bye name",
+                weight: -69,
+                phone: newText
+            }
+
+            dispatch(setUserStore(user, SET_PHONE));
         }
         
-
-        
-        console.log(newText);
+        setShowBox(!showTextBox);
     }
 
     const toggleColors = () => {

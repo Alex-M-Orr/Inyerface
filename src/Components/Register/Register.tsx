@@ -11,7 +11,7 @@ import "../../SCSS/register.scss";
 import { Timer } from "../Timer/Timer";
 import { useDispatch } from 'react-redux';
 import { IUserState } from "../../reducers/UserReducer";
-import { setUserStore } from "../../actions/UserAction";
+import { REGISTER, setUserStore } from "../../actions/UserAction";
 
 let counter =0;
 let mappedNums:any = [];
@@ -48,7 +48,7 @@ export const Register: React.FC<any> = (props: any) => {
     }
     console.log(user);
   
-    dispatch(setUserStore(user));
+    dispatch(setUserStore(user, REGISTER));
     console.log("PAST DISPATCH");
     toggleForm();
   }
