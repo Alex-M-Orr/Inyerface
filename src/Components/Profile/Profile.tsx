@@ -13,6 +13,7 @@ interface IProps {
  */
 export const ProfileComp: React.FC<IProps> = (props:IProps) => {
 
+   
     const [ maxImgWidth, setMaxImgWidth ] = useState(60);
     const [ toggleName, setNameToggle ] = useState(false);
     const [ toggleRotate, setPanelRotate ] = useState("rotate(90deg)");
@@ -91,6 +92,7 @@ export const ProfileComp: React.FC<IProps> = (props:IProps) => {
             </div>
             </div>
         </div>
+    
         
     );
 }
