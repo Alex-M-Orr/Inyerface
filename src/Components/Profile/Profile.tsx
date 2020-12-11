@@ -21,6 +21,7 @@ interface IProps {
  */
 const ProfileComp: React.FC<IProps> = (props:IProps) => {
 
+   
     const [ maxImgWidth, setMaxImgWidth ] = useState(60);
     const [ isPuzzleSolved, setIsPuzzleSolved ] = useState(false);
     const [ toggleName, setNameToggle ] = useState(false);
@@ -43,11 +44,11 @@ const ProfileComp: React.FC<IProps> = (props:IProps) => {
             }
             else if( randNum == 1 )
             {
-                return ( <DragonPuzzle triggeredFunction={()=>setIsPuzzleSolved(true)} />);
+                return(  <DragonPuzzle triggeredFunction={()=>setIsPuzzleSolved(true)} /> );
             }
             else if( randNum == 2 )
             {
-                return ( <DragonPuzzle triggeredFunction={()=>setIsPuzzleSolved(true)} />);
+                return(  <DragonPuzzle triggeredFunction={()=>setIsPuzzleSolved(true)} /> );
             }
     }
 
@@ -141,6 +142,7 @@ const ProfileComp: React.FC<IProps> = (props:IProps) => {
             </div>
             </div>
         </div>
+    
         
     );
 }

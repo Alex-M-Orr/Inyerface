@@ -1,0 +1,51 @@
+.form-set {
+    width: 100%;
+    max-width: 330px;
+    min-height: 330px;
+    padding: 15px;
+    background-color: #332E2E;
+    margin: auto;
+    border: 5px solid #BDC7A5;
+    border-radius: 15px;
+}
+
+.btnanim
+{
+  margin: 15px;
+}
+
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+:root {
+    --width: 300px;
+    --x-speed: 13s;
+    --y-speed: 7s;
+    --transition-speed: 2.2s;
+  }
+  
+  .trans { 
+    width: var(--width);
+    height: var(--width);
+  }
+  
+  .x {
+    animation: x var(--x-speed) linear infinite alternate;
+  }
+  .y {
+    animation: y var(--y-speed) linear infinite alternate;
+  }
+  
+  @keyframes x {
+    100% {
+      transform: translateX(calc(100vw - var(--width)));
+    }
+  }
+  @keyframes y {
+    100% {
+      transform: translateY(calc(100vh - var(--width)));
+    }
+  }

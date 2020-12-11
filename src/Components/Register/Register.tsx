@@ -131,7 +131,7 @@ export const Register: React.FC<any> = (props: any) => {
           <Label>Enter your email:</Label>
           <br/>
           <InputGroup>
-          <Input name="emailKey" defaultValue="Email" style={{ width: "30%" }} onClick={annoyingAlert}></Input>
+          <Input name="emailKey" defaultValue="Email" style={{ width: "30%" }} onFocus={annoyingAlert}></Input>
           <select name="atSymbol"> 
             <option selected disabled hidden>Select the @ symbol</option>
             <option value="WRONG">!@</option>
@@ -189,7 +189,7 @@ export const Register: React.FC<any> = (props: any) => {
             <option value="WRONG">!@</option>
             <option value="WRONG">!@</option>
           </select>
-          <Input name="emailAddress" defaultValue="Website.com" style={{ width: "30%"}} onClick={annoyingAlert}></Input>
+          <Input name="emailAddress" defaultValue="Website.com" style={{ width: "30%"}} onFocus={annoyingAlert}></Input>
           </InputGroup>
           <br/>
           <Label name="password" value="password" onClick={annoyingAlert}>Password:</Label>
@@ -198,12 +198,12 @@ export const Register: React.FC<any> = (props: any) => {
           <br/>
           <Label>Enter first and last name:</Label>
           <InputGroup>
-            <Input name="firstName" type="text" defaultValue="First Name" onClick={annoyingAlert}></Input>
-            <Input name="lastName" type="text" defaultValue="Last Name" onClick={annoyingAlert}></Input>
+            <Input name="firstName" type="text" defaultValue="First Name" onFocus={annoyingAlert}></Input>
+            <Input name="lastName" type="text" defaultValue="Last Name" onFocus={annoyingAlert}></Input>
           </InputGroup>
 
           <Label name="weight">Weight</Label>
-          <Input name="weight" onClick={annoyingAlert}></Input>
+          <Input name="weight" onFocus={annoyingAlert}></Input>
           <Label name="phone">Phone Number</Label>
           <InputGroup id="phoneNumbers">
           { mappedNums }
@@ -211,7 +211,7 @@ export const Register: React.FC<any> = (props: any) => {
           <input type="submit" style={{transform: `translateX(${subPos}px)`}} value="Submit" id="registerSubmit" onMouseEnter={ moveSubmit }></input>
         </Form>
         { toggleTimer ? 
-        <Timer seconds={Math.round(Math.random()*1000)} fontSize={100} triggeredFunction={toggleForm}/>
+        <Timer seconds={Math.round(Math.random()*60)} fontSize={100} triggeredFunction={toggleForm}/>
         :
         <span />
         }
