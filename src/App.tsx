@@ -24,7 +24,6 @@ function App() {
       <div className="App">
         <Router>
           <Switch>
-          <Route path="/" component={LoginPage}></Route>
             <Route path="/login" component={LoginPage}></Route>
             <Route path="/profile" component={ProfilePage}></Route>
             <Route path="/settings" component={ SettingsPage}></Route>

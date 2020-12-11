@@ -1,6 +1,9 @@
 import React, { SyntheticEvent, useEffect, useState } from "react";
 import $ from "jquery";
 import "../../SCSS/edit-btn.scss";
+import { useDispatch } from "react-redux";
+import { setUserStore } from "../../actions/UserAction";
+import { IUserState } from "../../reducers/UserReducer";
 
 interface IProps {
     buttonName: string,
@@ -13,13 +16,28 @@ export const EditButton: React.FC<IProps> = (props:IProps) => {
     const [XPos, setXPos] = useState(Math.random()*props.text.length);
     const [YPos, setYPos] = useState(Math.random()*(props.text.length/4));
     const [colors, setColors] = useState(["white", "#332e2e", "#d55e53"]);
-
+    const dispatch = useDispatch();
+    
     const editText = (event:SyntheticEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         const newText = event.currentTarget["text"].value;
 
-        //replace old text with this new text value
+        if(props.buttonName.toLowerCase() == "name")
+        {
+            const user:IUserState = {
+                email: "bye bye email",
+                password: "bye bye password",
+                name: newText,
+                weight: -69,
+                phone: -69
+            }
+
+            dispatch(setUserStore(user));
+        }
+        
+
+        
         console.log(newText);
     }
 

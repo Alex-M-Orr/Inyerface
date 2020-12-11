@@ -16,7 +16,7 @@ export const DragonPuzzle: React.FC<IProps> = (props:IProps) => {
 
     return(
         <div style={{height: 300}}>
-            <h3>Slay the dragon to see your profile info: </h3>
+            <h3 className="header-text">Slay the dragon to see your profile info:</h3>
             <button onClick={hurtDragon} style={{
                 transform: `translate(${XPos}px,${YPos}px)`,
             }} className="inv-btn"><img src="" alt="click to slay dragon" /></button>

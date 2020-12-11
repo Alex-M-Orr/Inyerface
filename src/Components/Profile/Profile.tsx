@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "reactstrap";
+import { connect } from "react-redux";
 import "../../SCSS/profile.scss";
 import { DragonPuzzle } from "../Puzzles/DragonPuzzle";
 import { EditButton } from "./EditButton";
 
 interface IProps {
-
+    name: string,
+    weight: number,
+    phoneNumber: number
 }
 
 /**
  * Displays persons profile information
  * 
- * @param props N/A
+ * @param props these properties are tied to the user state. 
+ * So essentially the props you see above contain the current
+ * data within that user state. The second that the user state 
+ * gets updated, these properties change to reflect that new
+ * data.
  */
-export const ProfileComp: React.FC<IProps> = (props:IProps) => {
+const ProfileComp: React.FC<IProps> = (props:IProps) => {
 
    
     const [ maxImgWidth, setMaxImgWidth ] = useState(60);
@@ -22,15 +28,6 @@ export const ProfileComp: React.FC<IProps> = (props:IProps) => {
     const [ toggleRotate, setPanelRotate ] = useState("rotate(90deg)");
     const [ showInfo, setShowInfo ] = useState(false);
 
-    const tempName = "Dilly Gobbington";
-    const tempBio = "I\'m a pretty cool guy to be frank. I don\'t like to gloat "+
-    "normally, but honestly what choice do I have here? I\'m tangibly, diagnosably " +
-    "perfect in every concievable way. I definitely undersold myself with my first " +
-    "sentence. Not that I\'m capable of making mistakes of course. I\'m so " +
-    "fucking cool that one time, my dad walked out of the ... Actually, I\'m too " +
-    "cool to finish that story. I know you\'ll all agree if and when you are graced " +
-    "with my presence.";
-
     useEffect(()=>{
         if(maxImgWidth < 10)
         {
@@ -38,6 +35,7 @@ export const ProfileComp: React.FC<IProps> = (props:IProps) => {
         }
     });
 
+    /** Renders a random puzzle element */
     const randomPuzzle = () => {
         const randNum = Math.round(Math.random()*2);
             if( randNum == 0 )
@@ -46,12 +44,27 @@ export const ProfileComp: React.FC<IProps> = (props:IProps) => {
             }
             else if( randNum == 1 )
             {
-                return (<p>another puzzle will go here</p>);
+                return(  <DragonPuzzle triggeredFunction={()=>setIsPuzzleSolved(true)} /> );
             }
             else if( randNum == 2 )
             {
-                return (<p>yet another puzzle will go here</p>);
+                return(  <DragonPuzzle triggeredFunction={()=>setIsPuzzleSolved(true)} /> );
             }
+    }
+
+    const formattedPhoneNumber = (phoneNumber:number) => {
+
+        let numArray = [];
+        const stringNumber:string = phoneNumber.toString();
+
+        for(let i:number = 0; i < stringNumber.length; i++)
+        {
+            numArray.push(stringNumber.charAt(i));
+        }
+
+        return `(${numArray[0]}${numArray[1]}${numArray[2]})-${numArray[3]}${numArray[4]}${numArray[5]}-`+
+        `${numArray[6]}${numArray[7]}${numArray[8]}${numArray[9]}`;
+
     }
 
     return(
@@ -67,7 +80,7 @@ export const ProfileComp: React.FC<IProps> = (props:IProps) => {
                         { toggleName ? 
                         <p className="prof-name" onMouseLeave={()=>setNameToggle(false)}
                         style={{transform: "rotate(180deg)"}}>
-                            {tempName}</p> 
+                            {props.name}</p>
                         :
                         <div className="black-box"
                         onMouseEnter={()=>setNameToggle(true)} />
@@ -92,16 +105,20 @@ export const ProfileComp: React.FC<IProps> = (props:IProps) => {
                             //if the info box is opened, we determine if the puzzle has been solved
                             isPuzzleSolved ? 
                             
-                                //if it has been solved, then show the user's information
+                                //if it has been solved, then show the user's information (the order of these will become random)
                                 <>
                                     <h3 className="prof-text-header">Name:</h3>
                                     <hr className="prof-hr"/>
-                                    <EditButton buttonName="Name" text={tempName}/>
+                                    <EditButton buttonName="Name" text={props.name}/>
                                     <br/>
                             
-                                    <h3 className="prof-text-header">Bio:</h3>
+                                    <h3 className="prof-text-header">Weight:</h3>
                                     <hr className="prof-hr"/>
-                                    <EditButton buttonName="Bio" text={tempBio}/>
+                                    <EditButton buttonName="Weight" text={props.weight.toString()}/>
+
+                                    <h3 className="prof-text-header">Phone Number:</h3>
+                                    <hr className="prof-hr"/>
+                                    <EditButton buttonName="Phone #" text={formattedPhoneNumber(props.phoneNumber)}/>
                                 </>
                             
                                 :
@@ -121,3 +138,13 @@ export const ProfileComp: React.FC<IProps> = (props:IProps) => {
         
     );
 }
+
+const mapStateToProps = (store:any) => {
+    return {
+        name: store.UserReducer.name,
+        weight: store.UserReducer.weight,
+        phoneNumber: store.UserReducer.phone
+    }
+};
+
+export default connect<IProps>(mapStateToProps)(ProfileComp);
