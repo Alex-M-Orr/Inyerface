@@ -15,6 +15,7 @@ interface IProps {
  */
 export const ProfileComp: React.FC<IProps> = (props:IProps) => {
 
+   
     const [ maxImgWidth, setMaxImgWidth ] = useState(60);
     const [ isPuzzleSolved, setIsPuzzleSolved ] = useState(false);
     const [ toggleName, setNameToggle ] = useState(false);
@@ -116,6 +117,7 @@ export const ProfileComp: React.FC<IProps> = (props:IProps) => {
             </div>
             </div>
         </div>
+    
         
     );
 }
