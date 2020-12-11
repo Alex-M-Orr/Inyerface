@@ -56,9 +56,17 @@ const ProfileComp: React.FC<IProps> = (props:IProps) => {
         let numArray = [];
         const stringNumber:string = phoneNumber.toString();
 
-        for(let i:number = 0; i < stringNumber.length; i++)
+        for(let i:number = 0; i < 10; i++)
         {
-            numArray.push(stringNumber.charAt(i));
+            console.log("i: "+i+" stringLength: "+stringNumber.length);
+            if(i > stringNumber.length)
+            {
+                numArray.push(0);
+            }
+            else
+            {
+                numArray.push(stringNumber.charAt(i));
+            } 
         }
 
         return `(${numArray[0]}${numArray[1]}${numArray[2]})-${numArray[3]}${numArray[4]}${numArray[5]}-`+
