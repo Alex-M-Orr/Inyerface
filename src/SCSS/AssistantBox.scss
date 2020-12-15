@@ -7,31 +7,78 @@
     padding: 3px;
   }
 
-.userMessages {
-    background-color: $color-five;
-    text-align: left;
+.userMessage {
+    background-color: $color-four;
+    border: solid $color-one;
+    border-width: 3px;
+    border-radius: 10px;
 }
 
-.botMessages {
+.botMessage {
+    background-color: $color-two;
+    border: solid $color-one;
+    border-width: 3px;
+    border-radius: 10px;
+}
+
+.messageContainer {
     background-color: $color-three;
-    text-align: right;
+    max-height: 120px !important;
+    min-height: 120px !important;
+    overflow-y: auto;
+    border-radius: 15px;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
-.assistantButton {
-    background-color: $color-one;
+.assistantContainer {
+    background-color: $color-four;
     width: 15%;
     position: absolute;
-    right: 25px;
+    right: 50px;
+    bottom: 0px;
+}
+
+.assistantTextInput {
+    border: solid $color-one;
+    border-width: 3px;
+    border-radius: 10px;
+}
+
+.assistantExpandButton {
+    background-color: $color-one;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
     bottom: 0;
+}
+
+.assistantSendButton {
+    background-color: $color-one;
+    width: 100%;
+    border: solid $color-one;
+    border-width: 3px;
+    border-radius: 10px;
+}
+
+.collapsing {
+    position: absolute !important;
+    bottom: 38px !important;
+    padding: 2% !important;
 }
 
 .assistantWrapper {
     background-color: $color-four;
-    width: 15%;
+    color: $color-one;
+    width: 100%;
     position: absolute;
-    right: 25px;
+    left: 0;
+    right: 0;
     bottom: 38px;
+    margin: auto;
     border: solid $color-one;
     border-width: 3px 3px 3px 3px;
     border-radius: 15px 15px 0 0;
+    padding: 2%;
 }
